@@ -24,7 +24,7 @@ pkgs.mkShell {
     libXrandr
   ]);
 
-  LD_LIBRARY_PATH = with pkgs; with pkgs.xorg; "${libX11}/lib:${libXext}/lib:${libXinerama}/lib:${libXi}/lib:${libXrandr}/lib:${libglvnd}/lib";
+  LD_LIBRARY_PATH = with pkgs; with pkgs.xorg; "${pkgs.vulkan-loader}/lib:${libX11}/lib:${libXext}/lib:${libXinerama}/lib:${libXi}/lib:${libXrandr}/lib:${libglvnd}/lib";
 
   CURL_CA_BUNDLE = "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
 }
